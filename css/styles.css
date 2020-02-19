@@ -283,6 +283,8 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 55px;
+  transform: rotate(0) scale(1);
+  transition: transform 250ms linear;
 }
 
 .settings-list__item:nth-child(2)::before {
@@ -293,6 +295,8 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 55px;
+  transform: rotate(0) scale(1);
+  transition: transform 250ms linear;
 }
 
 .settings-list__item:nth-child(3)::before {
@@ -303,6 +307,8 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 55px;
+  transform: rotate(0) scale(1);
+  transition: transform 250ms linear;
 }
 
 .settings-list__item:nth-child(4)::before {
@@ -313,6 +319,12 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 55px;
+  transform: rotate(0) scale(1);
+  transition: transform 250ms linear;
+}
+
+.settings-list__item:nth-child(-n + 4):hover::before {
+  transform: rotate(360deg) scale(1.08);
 }
 
 .settings-list__title {
@@ -380,10 +392,10 @@ img {
   overflow: hidden;
 }
 
-.overlay::before {
+.image-box .overlay::before {
+  display: none;
   content: '';
   position: absolute;
-  display: none;
   top: 0;
   left: 0;
   right: 0;
@@ -395,6 +407,83 @@ img {
 
 .image-box:hover .overlay::before {
   display: block;
+}
+
+.overlay-icons {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 168px;
+  height: 107px;
+}
+
+.image-box:hover .overlay-icons {
+  display: block;
+}
+
+.button {
+  all: unset;
+  display: inline-block;
+  border: 1px solid #fff;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.button:hover {
+  background-color: var(--color-menu-hover);
+  border: none;
+}
+
+.icon-lake {
+  position: absolute;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  background-image: url(../images/icons/button-icons/lake.png);
+}
+
+.icon-shuffe {
+  position: absolute;
+  left: 60px;
+  width: 48px;
+  height: 48px;
+  background-image: url(../images/icons/button-icons/shuffle.png);
+}
+
+.icon-clock {
+  position: absolute;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  background-image: url(../images/icons/button-icons/cloke.png);
+}
+
+.icon-cart {
+  position: absolute;
+  width: 168px;
+  height: 48px;
+  left: 0;
+  bottom: 0;
+  background-image: url(../images/icons/button-icons/cart.png);
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.icon-text {
+  position: absolute;
+  top: 7px;
+  left: 55px;
+  font-family: var(--font-family);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
 }
 
 .products-name {
