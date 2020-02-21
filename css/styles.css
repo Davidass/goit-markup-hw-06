@@ -44,6 +44,10 @@ img {
 .row {
   background-attachment: fixed;
   background-color: #1abc9c;
+  animation-name: topUp;
+  animation-duration: 2000ms;
+  animation-timing-function: var(--timing-fn);
+  animation-fill-mode: backwards;
 }
 
 /* Container */
@@ -165,6 +169,11 @@ img {
   margin-right: auto;
   text-transform: uppercase;
   transform: scale(1);
+  animation-name: logoleft;
+  animation-duration: 600ms;
+  animation-timing-function: var(--timing-fn);
+  animation-delay: 1000ms;
+  animation-fill-mode: backwards;
 }
 
 .logo:hover {
@@ -190,6 +199,11 @@ img {
   font-weight: 700;
   line-height: 11px;
   display: flex;
+  animation-name: navtop;
+  animation-duration: 600ms;
+  animation-timing-function: var(--timing-fn);
+  animation-delay: 1000ms;
+  animation-fill-mode: backwards;
 }
 
 .nav-menu__link {
@@ -244,6 +258,11 @@ img {
   text-align: center;
   color: #fff;
   text-transform: uppercase;
+  animation-name: banertitle;
+  animation-duration: 2000ms;
+  animation-timing-function: var(--timing-fn);
+  animation-delay: 1000ms;
+  animation-fill-mode: backwards;
 }
 
 .ampersant,
@@ -274,14 +293,21 @@ img {
   text-decoration: none;
   text-transform: uppercase;
   transition: background-color 250ms, color 250ms, var(--timing-fn);
+  animation-name: slideInTop;
+  animation-duration: 1500ms;
+  animation-timing-function: var(--timing-fn);
+  animation-fill-mode: backwards;
+  animation-delay: 1500ms;
 }
 
 .hero-slider__link:hover,
 .hero-slider__link:focus {
   color: #000;
   background-color: #117e68;
-  border: none;
-  transform: translate(-50%, 150%) scale(1.25);
+  transform: translate(-50%, 150%) scale(1.1);
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-weight: 700;
 }
 
 /* <!-- Settings --> */
@@ -363,6 +389,11 @@ img {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 30px;
+  transform: scale(1);
+}
+
+.settings-list__title:hover {
+  transform: scale(1.2);
 }
 
 .settings-list__text {
@@ -449,11 +480,9 @@ img {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 250ms, cubic-bezier(0.88, 0.15, 1, 1) 250ms;
-
 }
 
-.image-box:hover
-.overlay-icons {
+.image-box:hover .overlay-icons {
   opacity: 1;
 }
 
@@ -464,7 +493,6 @@ img {
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center;
-  
 }
 
 .button:hover,
@@ -746,10 +774,70 @@ img {
   border-top-right-radius: 10%;
   border-bottom-right-radius: 10%;
   transform: background-color 250ms var(--timing-fn) scale(1);
-
 }
 
 .button-mail:hover {
   background-color: #117e68;
   transform: scale(1.1);
+}
+
+/* @keyframes */
+
+@keyframes topUp {
+  0% {
+    opacity: 0;
+    transform: scale (0.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale (1);
+  }
+}
+
+@keyframes logoleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes navtop {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes banertitle {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 400%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 150%);
+  }
 }
