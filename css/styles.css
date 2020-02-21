@@ -318,6 +318,7 @@ img {
   justify-content: space-between;
   color: #555252;
   list-style: none;
+  cursor: pointer;
 }
 
 .settings-list__item {
