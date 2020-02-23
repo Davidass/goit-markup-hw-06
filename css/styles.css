@@ -93,7 +93,7 @@ img {
   font-weight: 300;
   display: flex;
   transform: scale(1);
-  transition: color 250ms, cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail-link:hover,
@@ -147,7 +147,7 @@ img {
   font-size: 14px;
   line-height: 11px;
   text-decoration: none;
-  transition: color 250ms, var(--timing-fn);
+  transition: color 250ms var(--timing-fn);
   transform: scale(1);
 }
 
@@ -217,7 +217,7 @@ img {
   letter-spacing: -0.6px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color 250ms, var(--timing-fn);
+  transition: color 250ms var(--timing-fn);
   transform: scale(1);
 }
 
@@ -292,7 +292,7 @@ img {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background-color 250ms, color 250ms, var(--timing-fn);
+  transition: background-color 250ms var(--timing-fn);
   animation-name: slideInTop;
   animation-duration: 1500ms;
   animation-timing-function: var(--timing-fn);
@@ -478,13 +478,14 @@ img {
   left: 50%;
   width: 168px;
   height: 107px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.8);
   opacity: 0;
-  transition: opacity 250ms, cubic-bezier(0.88, 0.15, 1, 1) 250ms;
+  transition: all 250ms var(--timing-fn);
 }
 
 .image-box:hover .overlay-icons {
   opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .button {
@@ -494,6 +495,7 @@ img {
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center;
+  transition: all 250ms var(--timing-fn);
 }
 
 .button:hover,
@@ -557,7 +559,7 @@ img {
   width: 255px;
   height: 40px;
   background-color: #323232;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.76, 0.46, 0.09, 0.63);
 }
 
 .products-name:hover,
@@ -689,14 +691,18 @@ img {
   line-height: 26px;
   text-decoration: none;
   color: #fff;
-  transform: background-color 250ms color 250ms var(--timing-fn), scale(1);
+  transform: scale(1);
+  transition: background-color 250ms var(--timing-fn);
 }
 
 .news-list__link:hover,
 .news-list__link:focus {
   background-color: #117e68;
   color: #000;
-  transform: scale(1.15);
+  transform: scale(1.1);
+  font-weight: 400;
+  border: 2px solid #fff;
+  border-radius: 5px;
 }
 
 /* <!-- Page footer --> */
@@ -774,7 +780,7 @@ img {
   border: 2px solid #fff;
   border-top-right-radius: 10%;
   border-bottom-right-radius: 10%;
-  transform: background-color 250ms var(--timing-fn) scale(1);
+  transition: all 250ms linear;
 }
 
 .button-mail:hover {
